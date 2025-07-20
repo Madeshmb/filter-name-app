@@ -1,0 +1,61 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+.form-css
+{
+  display: grid;
+  padding: 20px;
+  grid-template-rows:1fr 1fr 1fr;
+  row-gap: 10px;
+  justify-content: center;
+  top: 40%;
+  position:absolute;
+  text-align: center;
+  align-items: center;
+  
+}
+body
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vw;
+  background-color:wheat;
+  overflow: hidden;
+}
+.inputname
+{
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: large;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.check-button
+{
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: large;
+  background-color: rgb(209, 209, 194);
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.check-button:hover
+{
+  background-color: rgb(164, 164, 155);
+  transition: 0.7s;
+  cursor: pointer;
+}
+#result
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  text-align: center;
+  justify-content: center;
+}

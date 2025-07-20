@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <title>home</title>
+</head>
+<body>
+    
+  <form id="nameform" class="form-css" onsubmit="name_check(event)">
+    <div>
+      <input class="inputname" type="text" name="" id="nameinput" placeholder="Enter Name">
+    </div>
+    
+    <div>
+      <button class="check-button" type="submit">Check</button>
+    </div>
+
+    <div>
+      <p id="result" class="output"></p>
+    </div>
+    
+  </form>
+
+
+
+
+  <script>
+    async function name_check(event){
+      event.preventDefault();
+    
+      const name=document.getElementById("nameinput").value.trim();
+
+      const result= await fetch("/api/checkname/", {
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body:JSON.stringify({name: name })
+      });
+
+      const data=await result.json()
+      document.getElementById("result").textContent=data.reason;
+    };
+  </script>
+</body>
+</html>
